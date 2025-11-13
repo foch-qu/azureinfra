@@ -13,7 +13,7 @@ provider "azurerm" {
 
   subscription_id = "7
   client_id       = "e
-  client_S   = "zdcn"
+  client_S   = 
   tenant_id       = "e
 }
 

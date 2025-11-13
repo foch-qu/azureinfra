@@ -54,5 +54,12 @@ variable "admin_username" {
 variable "admin_password" {
   description = "passwd"
   type        = string
-  sensitive   = true
+  #sensitive   = true
+  default = "q!1234567890"
+}
+
+variable "vm_subnet_name" {
+  description = "虚拟机使用的子网名称"
+  type        = string
+  default     = "vm-subnet"
 }

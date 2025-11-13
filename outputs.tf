@@ -17,3 +17,4 @@ output "vnet_id" {
 #   description = "虚拟机内网IP地址"
 #   value       = module.vm.vm_private_ips
 # }
+

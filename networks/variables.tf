@@ -27,3 +27,9 @@ variable "subnet_names" {
   description = "子网名称"
   type        = list(string)
 }
+
+variable "enable_nat_gateway" {
+  description = "是否启用NAT网关"
+  type        = bool
+  default     = true
+}

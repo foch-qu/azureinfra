@@ -11,10 +11,10 @@ provider "azurerm" {
   features {}
 
 
-  subscription_id = "7a04a24c-df7a-4830-9f44-548548293c9c"
-  client_id       = "ea7e9870-c952-4dbc-b5d2-2ce0f72a19db"
-  client_secret   = "zN08Q~.hn01HosBVDSclO1QtvLpHK~nQuIW1mdcn"
-  tenant_id       = "e71e6328-70e2-417b-86c6-8e72cde210af"
+  subscription_id = "7
+  client_id       = "e
+  client_S   = "zdcn"
+  tenant_id       = "e
 }
 
 # resource group

@@ -1,10 +1,10 @@
 output "resource_group_name" {
-  description = "资源组名称"
+  description = "resource group name"
   value       = azurerm_resource_group.demo.name
 }
 
 output "vnet_id" {
-  description = "虚拟网络ID"
+  description = "virtual network ID"
   value       = module.networks.vnet_id
 }
 

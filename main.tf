@@ -1,8 +1,9 @@
 terraform {
+  required_version = ">= 1.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~>3.0"
+      version = ">= 3.50.0"  # 确保版本支持 routing_preference
     }
   }
 }
@@ -11,8 +12,7 @@ provider "azurerm" {
   features {}
 
 
-  
-}
+
 
 # resource group
 resource "azurerm_resource_group" "demo" {
@@ -32,9 +32,16 @@ module "networks" {
   subnet_names       = var.subnet_names
   subnet_prefixes    = var.subnet_prefixes
 
-
-
+  # NAT gateway settings
+  enable_nat_gateway = var.enable_nat_gateway
+  subnets_for_nat    = var.subnets_for_nat
+  nat_idle_timeout   = var.nat_idle_timeout
+  nat_dns_label      = var.nat_dns_label
+ # ssh_source_address = var.ssh_source_address
 }
+
+
+
 
 module "vm" {
   source = "./vm"

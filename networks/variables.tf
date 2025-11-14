@@ -33,3 +33,28 @@ variable "enable_nat_gateway" {
   type        = bool
   default     = true
 }
+
+
+variable "subnets_for_nat" {
+  description = "需要关联NAT网关的子网名称列表"
+  type        = list(string)
+  default     = []
+}
+
+variable "nat_idle_timeout" {
+  description = "NAT网关空闲超时时间（分钟）"
+  type        = number
+  default     = 10
+}
+
+variable "nat_dns_label" {
+  description = "NAT网关公共IP的DNS标签"
+  type        = string
+  default     = null
+}
+
+variable "ssh_source_address" {
+  description = "允许SSH访问的源IP地址"
+  type        = string
+  default     = "*"
+}

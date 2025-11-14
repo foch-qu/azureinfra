@@ -59,7 +59,34 @@ variable "admin_password" {
 }
 
 variable "vm_subnet_name" {
-  description = "虚拟机使用的子网名称"
+  description = "vm subnet name"
   type        = string
   default     = "vm-subnet"
 }
+
+variable "enable_nat_gateway" {
+  description = "enable nat gateway"
+  type        = bool
+  default     = true
+}
+
+
+
+variable "subnets_for_nat" {
+  description = "subnet names for NAT gateway association"
+  type        = list(string)
+  default     = ["vm-subnet-01", "vm-subnet-02"]
+}
+
+variable "nat_idle_timeout" {
+  description = "NAT gateway idle timeout"
+  type        = number
+  default     = 4
+}
+
+variable "nat_dns_label" {
+  description = "NAT gateway public IP DNS label"
+  type        = string
+  default     = null
+}
+

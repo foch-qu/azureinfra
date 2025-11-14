@@ -90,3 +90,15 @@ variable "nat_dns_label" {
   default     = null
 }
 
+variable "rds_username" {
+  description = "rds username"
+  type        = string
+  default     = "rdsadmin"
+}
+
+variable "rds_password" {
+  description = "rds passwd"
+  type        = string
+  #sensitive   = true
+  default = "Rds@12345678"
+}

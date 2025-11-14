@@ -13,6 +13,7 @@ provider "azurerm" {
 
 
 
+}
 
 # resource group
 resource "azurerm_resource_group" "demo" {
@@ -56,6 +57,16 @@ module "vm" {
   admin_password = var.admin_password
 
 
+}
+module "rds" {
+  source = "./rds"
+
+  resource_group_name = azurerm_resource_group.demo.name
+  location = azurerm_resource_group.demo.location
+            
+  subnet_id = module.networks.subnets_ids[var.subnet_names[1]]
+  admin_username = var.rds_username
+  admin_password = var.rds_password
 }
 
 
